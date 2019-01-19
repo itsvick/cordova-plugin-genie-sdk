@@ -21,8 +21,6 @@ import org.sunbird.sync.TelemetrySyncOperation;
 
 import java.util.Locale;
 
-import io.fabric.sdk.android.Fabric;
-
 
 /**
  * Created by swayangjit on 21/4/18.
@@ -40,7 +38,6 @@ public class SunbirdApplication extends Application implements ForegroundService
         SDKParams.setParams();
         saveTelemetry(buildStartEvent(this));
         TelemetrySyncOperation.startSyncingTelemetry();
-        initCrashlytics();
 
     }
 
@@ -137,11 +134,5 @@ public class SunbirdApplication extends Application implements ForegroundService
 
     public String floatForm(double d) {
         return String.format(Locale.US, "%.2f", d);
-    }
-
-    private void initCrashlytics() {
-        if (BuildConfigUtil.getBuildConfigValue(PACKAGE_NAME, "USE_CRASHLYTICS")) {
-            Fabric.with(this, new Crashlytics());
-        }
     }
 }
