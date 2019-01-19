@@ -26,7 +26,7 @@ import java.util.Locale;
  */
 public class SunbirdApplication extends Application implements ForegroundService.OnForegroundChangeListener {
 
-    public static final String PACKAGE_NAME = "org.sunbird.app";
+    public static final String PACKAGE_NAME = "org.sunbird.devconmobile";
 
     @Override
     public void onCreate() {
