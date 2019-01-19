@@ -35,23 +35,23 @@ public class SunbirdApplication extends Application implements ForegroundService
         ForegroundService.getInstance().registerListener(this);
         GenieService.init(this, PACKAGE_NAME);
         SDKParams.setParams();
-        saveTelemetry(buildStartEvent(this));
-        TelemetrySyncOperation.startSyncingTelemetry();
+        //saveTelemetry(buildStartEvent(this));
+        // TelemetrySyncOperation.startSyncingTelemetry();
 
     }
 
     @Override
     public void onSwitchForeground() {
         Interrupt interrupt = new Interrupt.Builder().environment("home").type("resume").pageId("").build();
-        saveTelemetry(interrupt);
-        TelemetrySyncOperation.startSyncingTelemetry();
+        //saveTelemetry(interrupt);
+        //TelemetrySyncOperation.startSyncingTelemetry();
     }
 
     @Override
     public void onSwitchBackground() {
         Interrupt resume = new Interrupt.Builder().environment("home").type("background").pageId("").build();
-        saveTelemetry(resume);
-        TelemetrySyncOperation.shutDownSchedulers();
+        //saveTelemetry(resume);
+        //TelemetrySyncOperation.shutDownSchedulers();
     }
 
     private void saveTelemetry(Telemetry telemetry) {
