@@ -4,7 +4,6 @@ import android.app.Application;
 import android.content.Context;
 import android.text.TextUtils;
 
-import com.crashlytics.android.Crashlytics;
 
 import org.ekstep.genieservices.GenieService;
 import org.ekstep.genieservices.commons.ILocationInfo;
